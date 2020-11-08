@@ -1,0 +1,64 @@
+PODS:
+  - AEXML (4.4.0)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - FolioReaderKit (1.4.0):
+    - AEXML (= 4.4.0)
+    - FontBlaster (= 5.1.1)
+    - MenuItemKit (= 4.0.1)
+    - RealmSwift (= 3.17.3)
+    - SSZipArchive (= 2.2.3)
+    - ZFDragableModalTransition (= 0.6)
+  - FontBlaster (5.1.1)
+  - MenuItemKit (4.0.1)
+  - netfox (1.19.0)
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
+  - SSZipArchive (2.2.3)
+  - ZFDragableModalTransition (0.6)
+
+DEPENDENCIES:
+  - Charts
+  - FolioReaderKit (from `https://github.com/roodyd12/FolioReaderKit.git`)
+  - netfox
+
+SPEC REPOS:
+  trunk:
+    - AEXML
+    - Charts
+    - FontBlaster
+    - MenuItemKit
+    - netfox
+    - Realm
+    - RealmSwift
+    - SSZipArchive
+    - ZFDragableModalTransition
+
+EXTERNAL SOURCES:
+  FolioReaderKit:
+    :git: https://github.com/roodyd12/FolioReaderKit.git
+
+CHECKOUT OPTIONS:
+  FolioReaderKit:
+    :commit: 519126c06ca02cd5b9eb8bb0ea0f49852f29625c
+    :git: https://github.com/roodyd12/FolioReaderKit.git
+
+SPEC CHECKSUMS:
+  AEXML: 16fb739dfb3809e91ebf9e9dc391482c3a6aaebf
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  FolioReaderKit: 33560c506287efa00818a9df6730b22d460654c0
+  FontBlaster: 8897ebdbb4b6ace3ab78c92b665d88c954f19e4a
+  MenuItemKit: 1459920e984d823e1bcc858b7a964f94e6bfa0f6
+  netfox: efeec1d23406df6cd605212f09a40957bb5654eb
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  ZFDragableModalTransition: 0d294eaaba6edfcb9839595de765f9ca06a4b524
+
+PODFILE CHECKSUM: ab0f6b594d8ed877278a671bc2c71898a6b97fd2
+
+COCOAPODS: 1.9.3
