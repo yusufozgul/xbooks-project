@@ -1,5 +1,5 @@
 # xbooks
-A hackatohon project
+A hackathon project
 
 - [x] VIPER architecture
 - [x] JSON Api Service
