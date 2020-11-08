@@ -1,9 +1,9 @@
 # xbooks
 A hackathon project
 
-- [x] VIPER architecture
+- [x] VIPER architecture (Some Modules)
 - [x] JSON Api Service
-- [x] Collection View Compositional Layoıt
+- [x] Collection View Compositional Layout
 
 ------------
 
