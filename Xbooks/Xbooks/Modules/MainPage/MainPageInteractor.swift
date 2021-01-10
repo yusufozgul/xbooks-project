@@ -51,7 +51,7 @@ class MainPageInteractor {
 extension MainPageInteractor: MainPageInteractorInterface {
     func getNowReadingBook() {
         if let currentBook = ReadingManager.shared.userData.currentBook {
-            let book: MainPageDataModel = MainPageDataModel(bookName: currentBook.name, author: "", explanation: currentBook.description, bookImageURL: URL(string: "https://google.com")!, bookURL: "", bookDetailURL: "", bookCost: 0)
+            let book: MainPageDataModel = MainPageDataModel(bookName: currentBook.name, author: "", explanation: currentBook.description, bookImageURL: URL(string: currentBook.bookImageUrl)!, bookURL: currentBook.bookURL, bookDetailURL: currentBook.bookDetailURL, bookCost: 0)
             output?.handleNowReadingBook(result: .success(book))
         }
     }

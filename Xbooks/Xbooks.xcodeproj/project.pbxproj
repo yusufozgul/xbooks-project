@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8891CE47258535FD0054CA6F /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8891CE46258535FD0054CA6F /* Downloader.swift */; };
 		970B00632556880F003BD39B /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970B00622556880F003BD39B /* MainTabBar.swift */; };
 		970B006B25569987003BD39B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 970B006A25569987003BD39B /* IQKeyboardManagerSwift */; };
 		970B00732556ACBF003BD39B /* LibraryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970B00722556ACBF003BD39B /* LibraryPage.swift */; };
@@ -16,7 +17,6 @@
 		970B007D2556B0F4003BD39B /* GridCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970B007B2556B0F4003BD39B /* GridCardView.swift */; };
 		970B007E2556B0F4003BD39B /* GridCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970B007C2556B0F4003BD39B /* GridCardView.xib */; };
 		970B008D2556BB96003BD39B /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970B008C2556BB96003BD39B /* ReadingView.swift */; };
-		970B00B62556C007003BD39B /* Harry-Potter-ve-Felsefe-Tasi.epub in Resources */ = {isa = PBXBuildFile; fileRef = 970B00B52556BFD0003BD39B /* Harry-Potter-ve-Felsefe-Tasi.epub */; };
 		970B00D02556F066003BD39B /* ReadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970B00CF2556F066003BD39B /* ReadingManager.swift */; };
 		970B00D72556F176003BD39B /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970B00D32556F175003BD39B /* DataParser.swift */; };
 		970B00D82556F176003BD39B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970B00D42556F175003BD39B /* ApiClient.swift */; };
@@ -71,6 +71,7 @@
 /* Begin PBXFileReference section */
 		2EA847BF624E8AF76D366F8D /* Pods-Xbooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xbooks.release.xcconfig"; path = "Target Support Files/Pods-Xbooks/Pods-Xbooks.release.xcconfig"; sourceTree = "<group>"; };
 		52624E0BECD56EFB96ACC40B /* Pods_Xbooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xbooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8891CE46258535FD0054CA6F /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		970B00622556880F003BD39B /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		970B00722556ACBF003BD39B /* LibraryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPage.swift; sourceTree = "<group>"; };
 		970B00742556ACD3003BD39B /* LibraryPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPagePresenter.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		970B007B2556B0F4003BD39B /* GridCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCardView.swift; sourceTree = "<group>"; };
 		970B007C2556B0F4003BD39B /* GridCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCardView.xib; sourceTree = "<group>"; };
 		970B008C2556BB96003BD39B /* ReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingView.swift; sourceTree = "<group>"; };
-		970B00B52556BFD0003BD39B /* Harry-Potter-ve-Felsefe-Tasi.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Harry-Potter-ve-Felsefe-Tasi.epub"; sourceTree = "<group>"; };
 		970B00CF2556F066003BD39B /* ReadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingManager.swift; sourceTree = "<group>"; };
 		970B00D32556F175003BD39B /* DataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		970B00D42556F175003BD39B /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -194,6 +194,7 @@
 				970B00D42556F175003BD39B /* ApiClient.swift */,
 				970B00D52556F176003BD39B /* ApiExtension.swift */,
 				970B00D32556F175003BD39B /* DataParser.swift */,
+				8891CE46258535FD0054CA6F /* Downloader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -261,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				970B00D12556F16B003BD39B /* API */,
-				970B00B52556BFD0003BD39B /* Harry-Potter-ve-Felsefe-Tasi.epub */,
 				97AF636C2555DD9200D880FE /* Common */,
 				97AF634C2555D09F00D880FE /* Modules */,
 				97AF63372555D02C00D880FE /* AppDelegate.swift */,
@@ -437,7 +437,6 @@
 				97AF637F2555EFAD00D880FE /* SummaryReportView.xib in Resources */,
 				970B011525572252003BD39B /* ProfileInfoCell.xib in Resources */,
 				97AF63442555D02D00D880FE /* LaunchScreen.storyboard in Resources */,
-				970B00B62556C007003BD39B /* Harry-Potter-ve-Felsefe-Tasi.epub in Resources */,
 				97AF636A2555DAFA00D880FE /* BookInfoView.xib in Resources */,
 				97AF63412555D02D00D880FE /* Assets.xcassets in Resources */,
 				970B007E2556B0F4003BD39B /* GridCardView.xib in Resources */,
@@ -504,6 +503,7 @@
 				97AF633C2555D02C00D880FE /* ViewController.swift in Sources */,
 				970B010C25571FFE003BD39B /* ProfilePagePresenter.swift in Sources */,
 				970B008D2556BB96003BD39B /* ReadingView.swift in Sources */,
+				8891CE47258535FD0054CA6F /* Downloader.swift in Sources */,
 				970B00772556ACE9003BD39B /* LibraryPageInteractor.swift in Sources */,
 				970B00752556ACD3003BD39B /* LibraryPagePresenter.swift in Sources */,
 				97AF63562555D41000D880FE /* MainPagePresenter.swift in Sources */,
@@ -675,6 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E7R55236BC;
 				INFOPLIST_FILE = Xbooks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -694,6 +695,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E7R55236BC;
 				INFOPLIST_FILE = Xbooks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

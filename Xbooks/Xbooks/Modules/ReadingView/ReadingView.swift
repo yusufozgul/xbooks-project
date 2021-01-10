@@ -10,13 +10,17 @@ import FolioReaderKit
 
 class ReadingView {
     let folioReader = FolioReader()
-    let bookPath = Bundle.main.path(forResource: "Harry-Potter-ve-Felsefe-Tasi", ofType: "epub")
+    var bookPath: String = ""
     let startReading: Date! = Date()
+    let parentVC: UIViewController
     
-    init(viewController: UIViewController) {
-        self.folioReader.presentReader(parentViewController: viewController, withEpubPath: bookPath!, andConfig: readerConfiguration(name: bookPath!))
+    init(viewController: UIViewController, bookPath: String) {
+        self.parentVC = viewController
+        self.bookPath = bookPath
+        self.folioReader.presentReader(parentViewController: viewController, withEpubPath: bookPath, andConfig: readerConfiguration(name: bookPath))
         self.folioReader.delegate = self
         self.folioReader.readerCenter?.delegate = self
+        
     }
     
     private func readerConfiguration(name: String) -> FolioReaderConfig {
@@ -43,7 +47,7 @@ extension ReadingView: FolioReaderDelegate, FolioReaderCenterDelegate {
             point += Int(seconds / 60)
         }
         var data = ReadingManager.shared.userData.readingData ?? []
-        data.append(ReadingData(date: String(describing: Date()), duration: seconds, bookName: bookPath ?? "", point: point))
+        data.append(ReadingData(date: String(describing: Date()), duration: seconds, bookName: bookPath, point: point))
         
         let totalDuration = (ReadingManager.shared.userData.currentBook?.totalDuration ?? 0) + seconds
         var totalPoint: Int = ReadingManager.shared.userData.currentBook?.totalPoint ?? 0
@@ -59,5 +63,15 @@ extension ReadingView: FolioReaderDelegate, FolioReaderCenterDelegate {
         ReadingManager.shared.userData.currentBook?.totalPoint = totalPoint + point
         ReadingManager.shared.userData.userTotalPoint = ReadingManager.shared.userData.userTotalPoint! + point
         ReadingManager.shared.save()
+    }
+    
+    func folioReader(_ folioReader: FolioReader, error: Error) {
+        parentVC.dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Bir hata oluştu", message: "Hata mesajı: \(error.localizedDescription)", preferredStyle: .alert)
+        let closeButton = UIAlertAction(title: "Kapat", style: .cancel) { (_) in
+            self.parentVC.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(closeButton)
+        self.parentVC.present(alert, animated: true, completion: nil)
     }
 }

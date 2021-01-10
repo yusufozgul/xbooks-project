@@ -28,6 +28,7 @@ class MainPagePresenter {
     private var router: MainPageRouterInterface!
     private(set) var snapshot: MainPageSnapshot!
     
+    private(set) var nowReading: MainPageDataModel?
     private var suggestedBooks: [MainPageDataModel] = []
     
     init(view: MainPageVCInterface, interactor: MainPageInteractorInterface, router: MainPageRouterInterface, snapshot: MainPageSnapshot = MainPageSnapshot()) {
@@ -57,7 +58,9 @@ extension MainPagePresenter: MainPagePresenterInterface {
     
     func tappedCell(at indexPath: IndexPath) {
         if indexPath.section == 0 {
-            router.goNowReading()
+            if let book = nowReading {
+                router.goNowReading(bookPath: book.bookURL)
+            }
         } else if indexPath.section == 1 {
             router.goBookDetail(book: suggestedBooks[indexPath.item])
         }
@@ -69,6 +72,7 @@ extension MainPagePresenter: MainPageInteractorOutput {
     func handleNowReadingBook(result: Result<MainPageDataModel, Error>) {
         switch result {
         case .success(let book):
+            self.nowReading = book
             self.snapshot.deleteItems(self.snapshot.itemIdentifiers(inSection: .nowReading))
             self.snapshot.appendItems([.nowReadingBook(book)], toSection: .nowReading)
             view?.updateCollectionView(with: snapshot)

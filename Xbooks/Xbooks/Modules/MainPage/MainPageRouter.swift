@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainPageRouterInterface {
-    func goNowReading()
+    func goNowReading(bookPath: String)
     func goBookDetail(book: MainPageDataModel)
     func goReports()
 }
@@ -36,8 +36,8 @@ class MainPageRouter {
 
 //MARK: - MainPageRouterInterface
 extension MainPageRouter: MainPageRouterInterface {
-    func goNowReading() {
-        readinfView = ReadingView(viewController: navigationController!)
+    func goNowReading(bookPath: String) {
+        readinfView = ReadingView(viewController: navigationController!, bookPath: bookPath)
     }
     
     func goBookDetail(book: MainPageDataModel) {
