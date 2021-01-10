@@ -1,5 +1,5 @@
 # xbooks
-A hackathon project
+User can be read books earn point. Can buy new books with points
 
 - [x] VIPER architecture (Some Modules)
 - [x] JSON Api Service
